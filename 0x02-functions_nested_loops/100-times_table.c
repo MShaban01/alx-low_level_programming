@@ -2,27 +2,29 @@
 #include <stdio.h>
 
 /**
- * print_times_table - Prints the n times table, starting with 0
- * @n: The number to generate the times table for
+ * times_table - prints the multiplication table of 0 to 9
+ *
  * Return: void
  */
-void print_times_table(int n)
+void times_table(void)
 {
-	if (n < 0 || n > 15)
-		return;
+	int i, j, result;
 
-	for (int i = 0; i <= n; i++)
+	for (i = 0; i < 10; i++)
 	{
-		printf("0");
-		for (int j = 1; j <= n; j++)
+		for (j = 0; j < 10; j++)
 		{
-			int prod = i * j;
-			if (prod <= 9)
-				printf(",   %d", prod);
-			else if (prod <= 99)
-				printf(",  %d", prod);
+			result = i * j;
+
+			if (j == 0)
+			{
+				printf("%d", result);
+			}
 			else
-				printf(", %d", prod);
+
+			{
+				printf(", %2d", result);
+			}
 		}
 		printf("\n");
 	}
