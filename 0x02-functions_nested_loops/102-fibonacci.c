@@ -23,6 +23,8 @@ int main(void)
 			printf(",%ld", k);
 		}
 		i++;
+		if (i != 49)
+		printf(", ");
 	}
 	printf("\n");
 	return (0);
