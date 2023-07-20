@@ -1,31 +1,41 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * times_table - prints the multiplication table of 0 to 9
+ * print_times_table - prints the n times table starting with 0
+ * @n: integer to determine range of times table from 0 to n
  *
  * Return: void
  */
-void times_table(void)
+void print_times_table(int n)
 {
-	int i, j, result;
+	int i, j, product;
 
-	for (i = 0; i < 10; i++)
+	if (n < 0 || n > 15)
+		return;
+
+	for (i = 0; i <= n; i++)
 	{
-		for (j = 0; j < 10; j++)
+		for (j = 0; j <= n; j++)
 		{
-			result = i * j;
+			product = i * j;
 
 			if (j == 0)
 			{
-				printf("%d", result);
+				printf("%d", product);
 			}
 			else
-
 			{
-				printf(", %2d", result);
+				printf(", ");
+
+				if (product < 10)
+					printf("  ");
+				else if (product < 100)
+					printf(" ");
+
+				printf("%d", product);
 			}
 		}
+
 		printf("\n");
 	}
 }
